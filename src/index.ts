@@ -4,13 +4,13 @@ export const handler = async (
   event: APIGatewayProxyEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {
-  console.log('Event: ', event);
-  console.log('Context: ', context);
+
+  const ramdomNumber = Math.random()
 
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Hello from TypeScript Lambda!',
+      message: `O numero aleátorio gerado é ${ramdomNumber}`,
       input: event,
     }),
   };
