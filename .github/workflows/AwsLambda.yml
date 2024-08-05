@@ -37,4 +37,4 @@ jobs:
 
       - name: Deploy to AWS Lambda
         run: |
-          aws lambda update-function-code --function-name poc-lambda-typescript --zip-file fileb://lambda.zip
+          aws lambda update-function-code --function-name poc-lambda --zip-file fileb://lambda.zip
