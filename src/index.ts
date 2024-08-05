@@ -5,12 +5,14 @@ export const handler = async (
   context: Context
 ): Promise<APIGatewayProxyResult> => {
 
+  const queryParams = event.queryStringParameters || {};
+  const channelId = queryParams.channelId || 'defaultValue'
   const ramdomNumber = Math.random()
 
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: `O numero aleátorio gerado é ${ramdomNumber}`,
+      message: `O numero aleátorio gerado é ${ramdomNumber} e o queryParams é ${channelId}`,
       input: event,
     }),
   };
