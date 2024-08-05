@@ -7,8 +7,8 @@ export const handler = async (
 
   const queryParams = event.queryStringParameters || {};
   const channelId = queryParams.channelId
-  const clientId = event.queryStringParameters?.clientId;
-  const skuId = event.queryStringParameters?.skuId;
+  const clientId = queryParams.clientId
+  const skuId = queryParams.skuId
   const ramdomNumber = Math.random()
 
   const response = {
