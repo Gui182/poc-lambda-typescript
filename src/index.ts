@@ -6,7 +6,7 @@ export const handler = async (
 ): Promise<APIGatewayProxyResult> => {
 
   const queryParams = event.queryStringParameters || {};
-  const channelId = event.path
+  const channelId = queryParams.channelId || 'defaultValue'
   const clientId = event.pathParameters?.clientId
   const skuId = event.pathParameters?.skuId
   const ramdomNumber = Math.random()
