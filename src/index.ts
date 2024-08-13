@@ -9,12 +9,13 @@ export const handler = async (
   const channelId = queryParams.channelId || 'defaultValue'
   const clientId = event.pathParameters?.clientId
   const skuId = event.pathParameters?.skuId
-  const ramdomNumber = Math.random()
+
+  const responseFactory = ResponseBodyFactory.getPayload(channelId, clientId || '', skuId || '');
 
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: `O numero aleátorio gerado é ${ramdomNumber}, o queryParams é ${channelId}, o clientId é ${clientId}, o skuId é ${skuId}`,
+      message: responseFactory.returnResponseBody(),
       input: event,
     }),
   };
