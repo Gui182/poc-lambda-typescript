@@ -1,4 +1,4 @@
-class ShopfyUseCase implements ReturnResponseBody {
+export class ShopfyUseCase implements ReturnResponseBody {
     channelId: string;
     clientId: string;
     skuId: string;

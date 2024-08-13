@@ -1,4 +1,7 @@
-class ResponseBodyFactory {
+import { ShopfyUseCase } from "../useCases/shopfyUseCase"
+import { VtexUseCase } from "../useCases/vtexUseCase"
+
+export class ResponseBodyFactory {
 
   static getPayload(channelId: string, clientId: string, skuId: string): ReturnResponseBody {
 

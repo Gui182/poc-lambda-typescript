@@ -1,4 +1,4 @@
-class VtexUseCase implements ReturnResponseBody {
+export class VtexUseCase implements ReturnResponseBody {
   channelId: string;
   clientId: string;
   skuId: string;

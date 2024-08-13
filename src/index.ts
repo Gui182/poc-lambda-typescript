@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+import { ResponseBodyFactory } from './factory/responseBodyFactory';
 
 export const handler = async (
   event: APIGatewayProxyEvent,
