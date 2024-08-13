@@ -8,10 +8,10 @@ export const handler = async (
 
   const queryParams = event.queryStringParameters || {};
   const channelId = queryParams.channelId || 'defaultValue'
-  const clientId = event.pathParameters?.clientId
-  const skuId = event.pathParameters?.skuId
+  const clientId = event.pathParameters?.clientId || 'defaultValue'
+  const skuId = event.pathParameters?.skuId || 'defaultValue'
 
-  const responseFactory = ResponseBodyFactory.getPayload(channelId, clientId || '', skuId || '');
+  const responseFactory = ResponseBodyFactory.getPayload(channelId, clientId , skuId);
 
   const response = {
     statusCode: 200,

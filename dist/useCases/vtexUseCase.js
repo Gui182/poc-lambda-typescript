@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VtexUseCase = void 0;
 class VtexUseCase {
     constructor(channelId, clientId, skuId) {
         this.channelId = channelId;
@@ -14,3 +16,4 @@ class VtexUseCase {
         };
     }
 }
+exports.VtexUseCase = VtexUseCase;

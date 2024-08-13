@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ShopfyUseCase = void 0;
 class ShopfyUseCase {
     constructor(channelId, clientId, skuId) {
         this.channelId = channelId;
@@ -14,3 +16,4 @@ class ShopfyUseCase {
         };
     }
 }
+exports.ShopfyUseCase = ShopfyUseCase;
