@@ -10,6 +10,7 @@ export const handler = async (
   const channelId = queryParams.channelId || 'defaultValue'
   const clientId = event.pathParameters?.clientId || 'defaultValue'
   const skuId = event.pathParameters?.skuId || 'defaultValue'
+  const redisHost = process.env.REDIS_HOST
 
   const responseFactory = ResponseBodyFactory.getPayload(channelId, clientId , skuId);
 
@@ -17,7 +18,7 @@ export const handler = async (
     statusCode: 200,
     body: JSON.stringify({
       message: responseFactory.returnResponseBody(),
-      input: event,
+      input: redisHost,
     }),
   };
 
