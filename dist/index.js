@@ -2,12 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handler = void 0;
 const handler = async (event, context) => {
-    console.log('Event: ', event);
-    console.log('Context: ', context);
+    const queryParams = event.queryStringParameters || {};
+    const channelId = queryParams.channelId || 'defaultValue';
+    const clientId = event.pathParameters?.clientId;
+    const skuId = event.pathParameters?.skuId;
+    const responseFactory = ResponseBodyFactory.getPayload(channelId, clientId || '', skuId || '');
     const response = {
         statusCode: 200,
         body: JSON.stringify({
-            message: 'Hello from TypeScript Lambda!',
+            message: responseFactory.returnResponseBody(),
             input: event,
         }),
     };
